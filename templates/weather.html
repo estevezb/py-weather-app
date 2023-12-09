@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">
+    <title>{{title}} Weather</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" 
+    rel ="stylesheet"/> 
+</head>
+
+<body>
+    <h1> {{title}} Weather</h1>
+    <p>{{ status}} and {{ temp}} &deg;</p> <!--&deg; is the degree symbol-->
+    <p>Feels like {{ feels_like}} &deg;</p><!--these are the values that we are filling in when we get the weather information-->
+
+
+
+    <form action="/weather"> <!--this is the form that we are going to use to get the weather information. It submit this to the weather route we defined in the python script --> 
+        <input type="text" name="city" id="city" placeholder="Enter city name"/>
+        <button type="submit">Get Weather</button>
+    </form>
+    
+</body>
+</html>
